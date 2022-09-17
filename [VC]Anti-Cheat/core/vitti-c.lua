@@ -23,10 +23,12 @@ addEventHandler('onClientPreRender',getRootElement(), function()
 end)
 
 addEventHandler('onClientExplosion',getRootElement(), function(_,_,_,type)
-    table.foreach(Config["Anti-Cheat"]["Explosion"]["explosion-ids"], function(index,value)
-        if type == value then
-            triggerServerEvent('Vitti:Detect',localPlayer,localPlayer,"Explosion-Hack")
-            return;
-        end 
-    end)   
+    if isElement(source) and getElementType(source) == "player" then
+        table.foreach(Config["Anti-Cheat"]["Explosion"]["explosion-ids"], function(index,value)
+            if type == value then
+                triggerServerEvent('Vitti:Detect',source,source,"Explosion-Hack")
+                return;
+            end
+        end)
+    end
 end)
