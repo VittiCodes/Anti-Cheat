@@ -49,7 +49,7 @@ Config = {
             }
         },
         ["Gravity"] = {
-            ["max-gravity"] = 0.008, -- the maximum gravity the player can be on before being banned | 0.008 - default
+            ["gravity"] = 0.008, -- gravity | 0.008 - default
 
             ["gravity-acls-allowed"] = {
                 "Console",
